@@ -115,12 +115,22 @@ def smaller_than_45000(listi):
     return(listi)
 
 def del_5(listi):
-    count = 0
+    newlist = []
     for i in listi:
-        if i%5 == 0:
-            listi = listi.pop(count)
-        count = count+1
-    return(listi)
+        if i % 5 == 0:
+            deadvalue = ''
+        else:
+            newlist.append(i)
+    return(newlist)
+
+def list40(listi):
+    listof40 = []
+    for i in listi:
+        if i == 40:
+            listof40.append(i)
+        else:
+            deadvalue = ''
+    return(listof40)
 
 
 continuity = True
@@ -167,7 +177,7 @@ while continuity:
         numb_list = create_random_list(lowestnumb, highestnumb, howmany)
         sortednumblist = sort(numb_list,lowestnumb)
         listi_undir_45000 = smaller_than_45000(sortednumblist)
-        del_5_list = del_5(sortednumblist)
+        del_5_list = del_5(numb_list)
 
         time.sleep(1.5)
 
@@ -201,5 +211,7 @@ while continuity:
         print_list(del_5_list)
         time.sleep(1.5)
 
-
+        print('\n Listi af 40: \n')
+        print_list(list40(numb_list))
+        time.sleep(1.5)
 
